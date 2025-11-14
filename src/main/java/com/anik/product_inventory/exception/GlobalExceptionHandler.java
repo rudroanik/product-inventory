@@ -44,7 +44,7 @@ public class GlobalExceptionHandler {
 
         log.error("Validation failed: {}", e.getMessage());
 
-        ErrorResponse errorResponse = new ErrorResponse(e.getLocalizedMessage(),HttpStatus.BAD_REQUEST.value());
+        ErrorResponse errorResponse = new ErrorResponse(e.getMessage(),HttpStatus.BAD_REQUEST.value());
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorResponse);
     }
 }

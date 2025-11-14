@@ -20,7 +20,7 @@ public class ProductController {
     private final ProductService productService;
 
     @PostMapping
-    public ResponseEntity<ProductEntity> createProduct( @Valid @RequestBody ProductEntity productEntity) {
+    public ResponseEntity<ProductEntity> createProduct(@Valid @RequestBody ProductEntity productEntity) {
 
         log.debug("Received request to create product: {}", productEntity);
 

@@ -24,6 +24,7 @@ public class ProductService {
         validateSkuFormat(product.getSku());
         checkSkuUnique(product.getSku());
 
+
         return productRepository.save(product);
     }
 
