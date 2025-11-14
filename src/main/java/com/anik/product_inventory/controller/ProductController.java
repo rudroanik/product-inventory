@@ -5,8 +5,10 @@ import com.anik.product_inventory.service.ProductService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
 
 @RestController
@@ -52,9 +54,10 @@ public class ProductController {
         return ResponseEntity.ok(productService.updateProduct(productEntity,id));
     }
     @DeleteMapping("/{id}")
-    public void deleteProductById(@PathVariable Long id) {
+    public ResponseEntity<String> deleteProductById(@PathVariable Long id) {
         log.debug("Received request to delete product by ID: {}", id);
         productService.deleteProduct(id);
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Product deleted");
     }
 
 }
