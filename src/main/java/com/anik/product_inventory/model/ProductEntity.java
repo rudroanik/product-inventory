@@ -1,5 +1,6 @@
 package com.anik.product_inventory.model;
 
+import com.anik.product_inventory.ProductStatus;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;
@@ -35,7 +36,7 @@ public class ProductEntity {
 
     @Enumerated(EnumType.STRING)
     @NotNull(message = "Status must not be null.")
-    private String status;
+    private ProductStatus status;
 
 
 }

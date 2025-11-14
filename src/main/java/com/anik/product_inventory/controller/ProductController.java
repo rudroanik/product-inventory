@@ -1,6 +1,5 @@
 package com.anik.product_inventory.controller;
 
-import com.anik.product_inventory.exception.ProductNotFoundException;
 import com.anik.product_inventory.model.ProductEntity;
 import com.anik.product_inventory.service.ProductService;
 import jakarta.validation.Valid;
@@ -8,9 +7,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequiredArgsConstructor
